@@ -1,16 +1,10 @@
 package com.example;
-
 import java.util.List;
 
 public class Lion {
 
     private final boolean hasMane;
-    protected Feline feline;
-
-    public Lion(boolean hasMane, Feline feline){
-        this.hasMane = hasMane;
-        this.feline = feline;
-    }
+    Feline feline = new Feline();
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
