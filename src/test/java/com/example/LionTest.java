@@ -12,6 +12,7 @@ public class LionTest {
 
     @Mock
     Lion lion;
+    Feline feline;
 
     @Test
     public void getFoodForLionType() throws Exception {
@@ -29,7 +30,7 @@ public class LionTest {
 
     @Test(expected = Exception.class)
     public void throwsExceptionWhenLionWithOtherParameters() throws Exception{
-        Lion lion = new Lion(" ");
+        Lion lion = new Lion(" ",feline);
         lion.doesHaveMane();
     }
 

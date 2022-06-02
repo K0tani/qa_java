@@ -10,6 +10,7 @@ public class AnimalTest {
         try {
             Animal animal = new Animal();
             new ArrayList<>(animal.getFood("СвинПаук"));
+            fail("Expected exception was not thrown");
         } catch (Exception actualResult) {
             String expectedResult = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
             assertEquals(expectedResult, actualResult.getMessage());

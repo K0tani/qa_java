@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParametrizationTest {
+    Feline feline = new Feline();
     private final String typeOfGender;
     private final boolean expectedResult;
 
@@ -23,7 +24,7 @@ public class LionParametrizationTest {
 
     @Test
     public void createGenderTest() throws Exception {
-        Lion lion = new Lion(typeOfGender);
+        Lion lion = new Lion(typeOfGender, feline);
         assertEquals(expectedResult, lion.doesHaveMane());
     }
 
