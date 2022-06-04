@@ -11,19 +11,19 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    Lion lion;
     Feline feline;
-
     @Test
     public void getFoodForLionType() throws Exception {
-        Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Lion lion = new Lion("Самец",feline);
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = lion.getFood();
         assertEquals(expectedResult,actualResult);
 }
     @Test
-    public void getKittensForLion() {
-        Mockito.when(lion.getKittens()).thenReturn(1);
+    public void getKittensForLion() throws Exception {
+        Lion lion = new Lion("Самец",feline);
+        Mockito.when(feline.getKittens()).thenReturn(1);
         int actualResult = lion.getKittens();
         assertEquals(1,actualResult);
     }

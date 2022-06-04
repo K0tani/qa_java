@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class AnimalTest {
-
+    Animal animal = new Animal();
     @Test
     public void throwsExceptionWhenFoodWithOtherParameters() {
         try {
-            Animal animal = new Animal();
-            new ArrayList<>(animal.getFood("СвинПаук"));
+            animal.getFood("СвинПаук");
             fail("Expected exception was not thrown");
         } catch (Exception actualResult) {
             String expectedResult = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
@@ -19,7 +18,6 @@ public class AnimalTest {
 
     @Test
     public void getFamily() {
-        Animal animal = new Animal();
         String actualResult = animal.getFamily();
         assertEquals("Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи", actualResult);
     }
